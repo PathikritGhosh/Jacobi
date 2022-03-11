@@ -411,11 +411,11 @@ class Jacobi: public CBase_Jacobi {
       	new_temperature = tmp;
 
 		constrainBC();
-#ifdef CMK_MESSAGE_LOGGING
+//#ifdef CMK_MESSAGE_LOGGING
 		if(iterations % ckptFreq == 0){
 			AtSync();
 		} else
-#endif
+//#endif
     {
       CkCallback cb(CkIndex_Main::report(NULL), mainProxy);
 			contribute(sizeof(int), &iterations, CkReduction::max_int, cb);
